@@ -31,5 +31,11 @@ public abstract class Toy {
     public void setChance(int value) {
         this.chance = value;
     }
+
+    @Override
+    public String toString() {
+        
+        return "id: " + this.getId() + ", name: " + this.getToyName() + ", type: " + this.getType() + ";\n";
+    }
 }
 

@@ -7,6 +7,6 @@ public class DropRare extends DropChance{
     }
     
     public void setChance(){
-        toy.setChance(40);
+        toy.setChance(20);
     }
 }

@@ -8,7 +8,7 @@ public class DropCommon extends DropChance{
     }
     
     public void setChance(){
-        toy.setChance(90);
+        toy.setChance(70);
     }
 
     

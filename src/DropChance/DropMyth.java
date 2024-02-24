@@ -10,7 +10,7 @@ public class DropMyth extends DropChance{
 
     @Override
     public void setChance() {
-        toy.setChance(10);
+        toy.setChance(5);
     }
     
 }
