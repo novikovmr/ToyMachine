@@ -8,7 +8,9 @@ import Toys.Toy;
 public class Machine {
     Toy toy;
     int sizeMachine;
+    int index;
     ArrayList<Toy> toyList = new ArrayList<Toy>();
+    ArrayList<Toy> prizeList = new ArrayList<Toy>();
     /**
      * 
      * @param sizeMachine - Кол-во мест для игрушек
@@ -50,8 +52,21 @@ public class Machine {
     public void prize() {
         Randomize randomize = new Randomize(toyList);
         Toy gift = randomize.prizeToy();
-        // System.out.printf("Вы выиграли приз!\nname: %s, type: %s\n", gift.getToyName(), gift.getType());
+        prizeList.add(gift);
+        index = toyList.indexOf(gift);
         System.out.println("Вы выиграли приз!\n" + gift);
         System.out.println(randomize.res);
+        System.out.println(index);
+        
+    }
+
+    public void deleteToy() {
+        toyList.remove(index);
+    }
+
+    public void winToys(){
+        for(int i = 0; i < prizeList.size(); i++) {
+            System.out.println(prizeList.get(i));
+        }
     }
 }

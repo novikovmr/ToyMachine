@@ -28,7 +28,7 @@ public class App {
         // machine1.printToys();
         // machine1.prize();
 
-        Controller ctr = new Controller();
+        Controller ctr = new Controller(machine1);
         ctr.start();
         
     }
