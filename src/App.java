@@ -1,3 +1,4 @@
+import Controller.Controller;
 import DropChance.DropCommon;
 import DropChance.DropRare;
 import ToyMachine.Machine;
@@ -24,9 +25,11 @@ public class App {
         machine1.addToy(toy1);
         machine1.addToy(toy2);
         machine1.addToy(toy3);
-        machine1.printToys();
-        machine1.prize();
+        // machine1.printToys();
+        // machine1.prize();
 
+        Controller ctr = new Controller();
+        ctr.start();
         
     }
 }
