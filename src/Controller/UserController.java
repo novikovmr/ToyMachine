@@ -39,6 +39,8 @@ public class UserController {
                     machine.prize();
                     machine.deleteToy();
                     break;
+                case 5:
+                    machine.logPrize();
                 default:
                     System.out.println("Программа завершена");
                     flag = false;
