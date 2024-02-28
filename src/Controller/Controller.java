@@ -2,10 +2,15 @@ package Controller;
 
 import java.util.Scanner;
 
+import ToyMachine.Machine;
 import UI.Authorize;
 
 public class Controller {
     Scanner scan;
+    private Machine machine;
+    public Controller (Machine machine){
+        this.machine = machine;
+    }
     
     public void start() {
         scan = new Scanner(System.in);
@@ -14,7 +19,7 @@ public class Controller {
         switch (pick) {
             case 1:
                 // System.out.println("Вы пользователь");
-                UserController user = new UserController();
+                UserController user = new UserController(machine);
                 user.controller();
                 break;
             

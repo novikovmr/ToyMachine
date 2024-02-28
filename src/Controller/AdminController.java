@@ -3,22 +3,23 @@ package Controller;
 import java.util.Scanner;
 
 import ToyMachine.Machine;
+import UI.AdminUi;
 import UI.UserUI;
 
-public class UserController {
-    
-    private Machine machine;
-
+public class AdminController {
     boolean flag;
-    public UserController(Machine machine) {
+    Machine machine;
+    
+
+    public AdminController(Machine machine) {
         this.machine = machine;
     }
 
-    public void controller() {
+    public void controller(){
         flag = true;
-        while (flag) {
+        while(flag) {
             Scanner scan = new Scanner(System.in);
-            UserUI.getMessage();
+            AdminUi.getMessage();
             int pick = Integer.parseInt(scan.nextLine());
             switch (pick) {
                 case 1:
@@ -27,26 +28,21 @@ public class UserController {
                     continuePrompt("Вернуться в главное меню? (Y)");
                     break;
                 case 2:
-                    System.out.println("\n~~~~~Система редкости~~~~~\n");
-                    UserUI.aboutDropChance();
+                    System.out.println("\n~~~~~Добавление игрушки~~~~~\n");
+                    //Метод добавления
                     continuePrompt("Вернуться в главное меню? (Y)");
                     break;
                 case 3:
-                    System.out.println("Выигранные игрушки");
-                    machine.winToys();
+                    System.out.println("\n~~~~~Удаление игрушки~~~~~\n");
+                    //Метод удаления
                     continuePrompt("Вернуться в главное меню? (Y)");
                     break;
                 case 4:
-                    System.out.println("Испытываем судьбу");
-                    machine.prize();
-                    machine.deleteToy();
+                    System.out.println("\n~~~~~Изменить редкость~~~~~\n");
+                    //Метод изменения редкости
                     continuePrompt("Вернуться в главное меню? (Y)");
                     break;
                 case 5:
-                    machine.logPrize();
-                    continuePrompt("Вернуться в главное меню? (Y)");
-                    break;
-                case 6:
                     System.out.println("Завершение работы");
                     flag = false;
                     break;
@@ -56,9 +52,7 @@ public class UserController {
                     break;
             }
         }
-
     }
-
     public void continuePrompt(String message) {
         System.out.println(message);
         Scanner scan2 = new Scanner(System.in);
